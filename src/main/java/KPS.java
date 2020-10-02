@@ -26,7 +26,7 @@ public class KPS {
     /**
      * @.pre pelaaja1 == "kivi" || "paperi" || "sakset"
      *      && pelaaja2 == "kivi" || "paperi" || "sakset"
-     * @.post
+     * @.post voittaja == 1 || 2 || 0
      */
     public static int pelaaKierros(String pelaaja1, String pelaaja2) {
         //* Metodi vertaa pelaajien syöttämiä sanoja, ja selvittää, kumpi pelaajista voitti
