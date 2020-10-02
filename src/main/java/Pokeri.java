@@ -32,7 +32,7 @@ public class Pokeri {
      *
      */
     public static void sisältääParin() {
-
+        int pari;
     }
 
 
