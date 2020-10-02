@@ -24,42 +24,47 @@ public class KPS {
     }
 
     /**
+     * Palauttaa voittaneen pelaajan numeron tai 0 (tasapeli)
      * @.pre pelaaja1 == "kivi" || "paperi" || "sakset"
      *      && pelaaja2 == "kivi" || "paperi" || "sakset"
      * @.post voittaja == 1 || 2 || 0
      */
     public static int pelaaKierros(String pelaaja1, String pelaaja2) {
         //* Metodi vertaa pelaajien syöttämiä sanoja, ja selvittää, kumpi pelaajista voitti
-        //* Metodi palauttaa voittaneen pelaajan numeron (1 tai 2)
+        //* Metodi palauttaa voittaneen pelaajan numeron (1 tai 2) tai 0 (tasapeli)
+        //* Jos pelaaja syöttää jotain muuta kuin "kivi", "paperi" tai "sakset", kytkin menee default "caseen"
+        //* ja ilmoittaa virheellisestä syötteestä.
+
+
+        int v = 0;
         switch (pelaaja1){
             case "kivi":
                 if (pelaaja2.equals("kivi")) {
-                    return 0;
+                    v = 0;
                 } else if(pelaaja2.equals("paperi")){
-                    return 2;
+                    v = 2;
                 }else{
-                    return 1;
+                    v = 1;
                 }
             case "paperi":
                 if (pelaaja2.equals("paperi")) {
-                    return 0;
+                    v = 0;
                 } else if(pelaaja2.equals("sakset")){
-                    return 2;
+                    v = 2;
                 }else{
-                    return 1;
+                    v = 1;
                 }
             case "sakset":
                 if (pelaaja2.equals("sakset")) {
-                    return 0;
+                    v = 0;
                 } else if(pelaaja2.equals("kivi")){
-                    return 2;
+                    v = 2;
                 }else{
-                    return 1;
+                    v = 1;
                 }
             default:
                 System.out.println("Syötä 'kivi', 'paperi' tai 'sakset'.");
         }
+        return v;
     }
-
-
 }
