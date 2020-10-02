@@ -6,14 +6,26 @@ public class KPS {
         String pelaaja1 = new Scanner(System.in).nextLine();
         String pelaaja2 = new Scanner(System.in).nextLine();
 
+        //* Vaihdetaan syötteet pieniksi kirjaimiksi koodin ja määrittelyjen helpottamiseksi.
+        pelaaja1.toLowerCase();
+        pelaaja2.toLowerCase();
+
         int voittaja = pelaaKierros(pelaaja1, pelaaja2);
 
-        System.out.println("Pelin voitti pelaaja " + voittaja);
-        //System.out.println("Tasapeli?");
+        if (voittaja == 0) {
+            System.out.println("Peli oli tasapeli");
+        }
+        if (voittaja == 1) {
+            System.out.println("Pelin voitti pelaaja1");
+        }
+        if (voittaja == 2) {
+            System.out.println("Pelin voitti pelaaja2");
+        }
     }
 
     /**
-     * @.pre
+     * @.pre pelaaja1 == "kivi" || "paperi" || "sakset"
+     *      && pelaaja2 == "kivi" || "paperi" || "sakset"
      * @.post
      */
     public static int pelaaKierros(String pelaaja1, String pelaaja2) {
