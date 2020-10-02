@@ -1,3 +1,4 @@
+import java.util.*;
 public class KPS {
 
 
@@ -11,6 +12,15 @@ public class KPS {
         //System.out.println("Tasapeli?");
     }
 
+    /**
+     * @.pre
+     * @.post
+     */
+    public static int pelaaKierros() {
+        //* Metodi vertaa pelaajien syöttämiä sanoja, ja selvittää, kumpi pelaajista voitti
+        //* Metodi palauttaa voittaneen pelaajan numeron (1 tai 2)
+
+    }
 
 
 }
