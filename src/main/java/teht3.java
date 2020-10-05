@@ -135,4 +135,61 @@ public class teht3 {
           }
 
 
+          /*
+          5. Mallinnettava: Henkilö sukututkimusohjelmassa
+             Määrittely: Javassa oltava string
+             Käyttötapaukset:
+             Rajoitukset:
+             Esimerkki:
+           */
+
+        public class Henkilo {
+            protected String aiti;
+            protected String isa;
+            protected String sisko;
+            protected String veli;
+            protected String lapsi;
+
+            Henkilo henkilo1 = new Henkilo();
+            Henkilo henkilo2 = new Henkilo();
+
+            ArrayList<String> sukulaiset = new ArrayList<String>();
+
+            /**
+             * @.pre EXISTS(i: 0 <= i < sukulaiset.size[]; sukulaiset[i].equals("aiti", "isa", "sisko", "veli", "lapsi")
+             * @.post True
+             */
+
+            public boolean onkoSukua(henkilo1, henkilo2) {
+            }
+
+
+            public Henkilo(String aiti, String isa, String sisko, String veli, String lapsi) {
+                this.aiti = aiti;
+                this.isa = isa;
+                this.sisko = sisko;
+                this.veli = veli;
+                this.lapsi = lapsi;
+            }
+
+            public String annaAiti() {
+                return aiti;
+            }
+
+            public String annaIsa() {
+                return isa;
+            }
+
+            public String annaSisko() {
+                return sisko;
+            }
+
+            public String annaVeli() {
+                return veli;
+            }
+
+            public String annaLapsi() {
+                return lapsi;
+            }
+        }
 }
