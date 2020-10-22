@@ -27,11 +27,14 @@ public class Pokeri {
 
     /**
      * Palauttaa pelaajan valitseman kortin maan ja arvon (=kortin)
-     * @.pre maa == "ruutu" || "hertta || "pata" || "risti"
-     *          && 0 < arvo < 14
-     *          && kortti != käsi[i]
-     * @.post true
+     * @.pre maa != null && arvo != null
+     * @.post FORALL (int i =1  : i < 15 : i++)
+     *        (RESULT == "ruutu " + i) ||
+     *        (RESULT == "hertta " + i) ||
+     *        (RESULT == "pata " + i) ||
+     *        (RESULT == "risti " +i)
      */
+
     public static String määritäKortti (String maa, String arvo){
         //* Metodi muuttaa pelaajan antamat syötteet yhdeksi String-tyyppiseksi kortiksi
         //* Tarkistetaan että pelaajan antama syöte on kelvollinen.
@@ -50,7 +53,8 @@ public class Pokeri {
     /**
      * Palauttaa tiedon, onko käsikorteissa kahta saman arvoista korttia (=paria)
      * @.pre käsi.length() == 5
-     * @.post true || false
+     * @.post (RESULT == true) ||
+     *        (RESULT == false)
      */
     public static boolean sisältääParin(ArrayList<String> käsi) {
         //* Metodi käy läpi käsikortit, ja tarkistaa, onko korteissa kahta saman arvoista korttia
