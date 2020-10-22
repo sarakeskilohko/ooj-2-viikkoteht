@@ -26,7 +26,7 @@ public class Pokeri {
     }
 
     /**
-     * Palauttaa pelaajan valitseman kortin maan ja arvon (=kortin)
+     * Palauttaa pelaajan valitseman kortin maan ja arvon eli kortin (String)
      * @.pre maa != null && arvo != null
      * @.post FORALL (int i =1  : i < 15 : i++)
      *        (RESULT == "ruutu " + i) ||
