@@ -25,9 +25,16 @@ public class KPS {
 
     /**
      * Palauttaa voittaneen pelaajan numeron tai 0 (tasapeli)
-     * @.pre pelaaja1 == "kivi" || "paperi" || "sakset"
-     *      && pelaaja2 == "kivi" || "paperi" || "sakset"
-     * @.post voittaja == 1 || 2 || 0
+     * @.pre pelaaja1 != null && pelaaja2 != null
+     * @.post (RESULT == 0 && pelaaja1 == "kivi" && pelaaja2 == "kivi"
+     *                     || pelaaja1 == "paperi" && pelaaja2 == "paperi"
+     *                     || pelaaja1 == "sakset" && pelaaja2 == "sakset")
+     *      ||(RESULT == 1 && pelaaja1 == "kivi" && pelaaja2 == "sakset"
+     *                     || pelaaja1 == "paperi" && pelaaja2 == "kivi"
+     *                     || pelaaja1 == "sakset" && pelaaja2 == "paperi")
+     *      ||(RESULT == 2 && pelaaja1 == "kivi" && pelaaja2 == "paperi"
+     *                     || pelaaja1 == "paperi" && pelaaja2 == "sakset"
+     *                     || pelaaja1 == "sakset" && pelaaja2 == "kivi")
      */
     public static int pelaaKierros(String pelaaja1, String pelaaja2) {
         //* Metodi vertaa pelaajien syöttämiä sanoja, ja selvittää, kumpi pelaajista voitti
